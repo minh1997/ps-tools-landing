@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#06101d" />
+    <meta
+      name="description"
+      content="PS Visual Tool — Bộ công cụ AI dành cho nhiếp ảnh gia, giúp thực hoá phông nền, ánh sáng và hiệu ứng chỉ trong một cú nhấp."
+    />
+    <meta property="og:title" content="PS Visual Tool — Nâng tầm hậu kỳ nhiếp ảnh" />
+    <meta
+      property="og:description"
+      content="Tạo phông nền chân thực, ánh sáng tự nhiên và hiệu ứng giàu cảm xúc mà vẫn giữ nguyên chủ thể."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="vi_VN" />
+    <link rel="preload" href="/assets/ps-visual-hero.webp" as="image" type="image/webp" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23081120'/%3E%3Cpath d='M32 9 51 20v24L32 55 13 44V20L32 9Zm0 5.5L18 22.6v18.8l14 8.1 14-8.1V22.6l-14-8.1Zm-11.8 10.9L32 32.2l11.8-6.8v5.3L34.5 36v10.8h-5V36l-9.3-5.3v-5.3Z' fill='%238bd4ff'/%3E%3C/svg%3E"
+    />
+    <title>PS Visual Tool — AI cho nhiếp ảnh chuyên nghiệp</title>
+    <link rel="stylesheet" href="/styles.css?v=4" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="site-header" id="top">
+      <div class="container nav-shell">
+        <a class="brand" href="#top" aria-label="PS Visual Tool — về đầu trang">
+          <svg class="brand-mark" viewBox="0 0 54 54" aria-hidden="true">
+            <path d="M27 3 48 15v24L27 51 6 39V15L27 3Z" />
+            <path d="m9 17 18 10 18-10M9 29l18 10 18-10M27 27v24" />
+            <path d="m17 22 10-6 10 6" />
+          </svg>
+          <span class="brand-name"><b>PS</b><i>Visual Tool</i></span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Điều hướng chính">
+          <a class="active" href="#top">Trang chủ</a>
+          <a href="#tinh-nang">Tính năng</a>
+          <a href="#quy-trinh">Cách hoạt động</a>
+          <a href="#bang-gia">Bảng giá</a>
+        </nav>
+
+        <div class="nav-actions">
+          <span class="version">v1.0.1</span>
+          <a class="button button-small button-ghost" href="#tai-xuong">Tải ứng dụng</a>
+          <button class="menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false">
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-nav" aria-label="Điều hướng di động">
+        <a href="#top">Trang chủ</a>
+        <a href="#tinh-nang">Tính năng</a>
+        <a href="#quy-trinh">Cách hoạt động</a>
+        <a href="#bang-gia">Bảng giá</a>
+        <a href="#tai-xuong">Tải ứng dụng</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-pad">
+        <div class="hero-glow glow-one" aria-hidden="true"></div>
+        <div class="hero-glow glow-two" aria-hidden="true"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <div class="eyebrow"><span></span> Phần mềm dành cho nhiếp ảnh gia</div>
+            <h1>Biến ý tưởng thành <em>khung hình</em></h1>
+            <p class="hero-lead">
+              Hoàn thiện phông nền, ánh sáng và hiệu ứng AI chỉ trong vài giây — vẫn giữ nguyên chủ thể,
+              màu da và cảm xúc của bức ảnh gốc.
+            </p>
+            <ul class="hero-points" aria-label="Lợi ích nổi bật">
+              <li><span>01</span> Một cú nhấp, kết quả sẵn sàng để tinh chỉnh</li>
+              <li><span>02</span> Tối ưu riêng cho ảnh cưới, chân dung và studio</li>
+              <li><span>03</span> Hoạt động trực tiếp trong quy trình hậu kỳ của bạn</li>
+            </ul>
+            <div class="hero-cta">
+              <a class="button button-primary" href="#tai-xuong">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.6 10.4 4v7H3V5.6Zm8.4-1.8L21 2v9h-9.6V3.8ZM3 12h7.4v7L3 17.4V12Zm8.4 0H21v10l-9.6-1.9V12Z" /></svg>
+                Tải cho Windows
+              </a>
+              <a class="text-link" href="#trai-nghiem">Xem công cụ hoạt động <span>↘</span></a>
+            </div>
+            <div class="micro-note"><span class="pulse-dot"></span> Cài đặt trong 2 phút · 20 credits dùng thử</div>
+          </div>
+
+          <div class="hero-visual reveal delay-1" aria-label="Mô phỏng phần mềm PS Visual Tool trên laptop">
+            <div class="hero-image-wrap">
+              <img
+                src="/assets/ps-visual-hero.webp"
+                width="1774"
+                height="887"
+                alt="Laptop đang mở phần mềm chỉnh sửa ảnh với khung cảnh khu vườn cưới"
+              />
+              <div class="visual-badge visual-badge-top">
+                <span class="badge-icon">✦</span>
+                <span><b>AI Render</b><small>Hoàn tất trong 08 giây</small></span>
+              </div>
+              <div class="visual-badge visual-badge-bottom">
+                <div class="avatars" aria-hidden="true"><span>AS</span><span>PK</span><span>+</span></div>
+                <span><b>2.400+ studio</b><small>đã đưa vào quy trình</small></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container trust-strip reveal">
+          <p>Được xây dựng cho quy trình hậu kỳ thực tế</p>
+          <div class="trust-items">
+            <span>Ảnh cưới</span><i></i><span>Chân dung</span><i></i><span>Studio</span><i></i><span>Concept</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="features section-pad" id="tinh-nang">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <span class="kicker">Bộ công cụ chuyên sâu</span>
+              <h2>Mọi chi tiết đều có thể <em>thực hoá</em></h2>
+            </div>
+            <p>Từ bố cục, nguồn sáng đến bầu không khí — mỗi công cụ giải quyết một phần việc rõ ràng, không làm nặng quy trình.</p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card feature-card-wide reveal">
+              <div class="feature-orb orb-magic" aria-hidden="true">✦</div>
+              <span class="feature-index">01 / 06</span>
+              <div>
+                <h3>Thực hoá tự động</h3>
+                <p>Đọc chiều sâu và ánh sáng của ảnh gốc để dựng một không gian mới tự nhiên, đồng nhất.</p>
+              </div>
+              <span class="credit">1 credit</span>
+            </article>
+
+            <article class="feature-card reveal delay-1">
+              <div class="feature-orb orb-landscape" aria-hidden="true"><span></span></div>
+              <span class="feature-index">02 / 06</span>
+              <h3>Phông nền chân thực</h3>
+              <p>Giữ đường chân trời, phối cảnh và độ sâu đúng với ống kính ban đầu.</p>
+              <span class="credit">1 credit</span>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-orb orb-sun" aria-hidden="true">☀</div>
+              <span class="feature-index">03 / 06</span>
+              <h3>Điều hướng ánh sáng</h3>
+              <p>Đặt nguồn sáng trái, phải hoặc viền sau mà không phá sắc độ da.</p>
+              <span class="credit">1 credit</span>
+            </article>
+
+            <article class="feature-card reveal delay-1">
+              <div class="feature-orb orb-layers" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span class="feature-index">04 / 06</span>
+              <h3>Chất liệu bề mặt</h3>
+              <p>Cỏ, cát, sỏi và sàn studio được dựng với chi tiết đúng góc máy.</p>
+              <span class="credit">1 credit</span>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-orb orb-palette" aria-hidden="true"><i></i><i></i><i></i></div>
+              <span class="feature-index">05 / 06</span>
+              <h3>Đồng bộ màu không gian</h3>
+              <p>Cân bằng màu nền, ánh sáng và chủ thể theo một bảng màu thống nhất.</p>
+              <span class="credit">1 credit</span>
+            </article>
+
+            <article class="feature-card feature-card-accent reveal delay-1">
+              <div class="feature-orb orb-spark" aria-hidden="true">✦</div>
+              <span class="feature-index">06 / 06</span>
+              <h3>Hiệu ứng theo mùa</h3>
+              <p>Tuyết, sương, cánh hoa và lá rơi có chiều sâu, chuyển động và mật độ tự nhiên.</p>
+              <div class="effect-tags"><span>Tuyết</span><span>Sương</span><span>Hoa</span><span>Lá</span></div>
+              <span class="credit">1 credit</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="experience section-pad" id="trai-nghiem">
+        <div class="container experience-grid">
+          <div class="experience-copy reveal">
+            <span class="kicker">Trước &amp; sau</span>
+            <h2>Khác biệt nằm ở <em>chiều sâu</em></h2>
+            <p>Kéo thanh trượt để cảm nhận cách PS Visual Tool làm rõ chi tiết, hướng sáng và tách lớp không gian mà không tạo cảm giác “ảnh AI”.</p>
+            <div class="quality-list">
+              <div><b>100%</b><span>giữ nguyên<br />chủ thể</span></div>
+              <div><b>8s</b><span>thời gian<br />trung bình</span></div>
+              <div><b>4K</b><span>xuất ảnh<br />chất lượng cao</span></div>
+            </div>
+          </div>
+
+          <div class="compare reveal delay-1" id="compare">
+            <div class="compare-image compare-after"></div>
+            <div class="compare-image compare-before" id="beforePane"></div>
+            <div class="compare-line" id="compareLine"><span>↔</span></div>
+            <span class="compare-label before-label">Ảnh gốc</span>
+            <span class="compare-label after-label">Đã xử lý</span>
+            <input id="compareRange" type="range" min="8" max="92" value="49" aria-label="So sánh ảnh trước và sau" />
+          </div>
+        </div>
+      </section>
+
+      <section class="workflow section-pad" id="quy-trinh">
+        <div class="container">
+          <div class="section-heading centered reveal">
+            <div>
+              <span class="kicker">Quy trình tinh gọn</span>
+              <h2>Từ ảnh gốc đến bản hoàn thiện</h2>
+            </div>
+            <p>Ba bước quen thuộc, không cần học lại cả một phần mềm mới.</p>
+          </div>
+
+          <div class="steps">
+            <article class="step reveal">
+              <span class="step-number">01</span>
+              <div class="step-visual upload-visual" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <b>JPG</b>
+              </div>
+              <h3>Chọn ảnh</h3>
+              <p>Kéo thả ảnh JPG, PNG hoặc TIFF. Công cụ tự nhận diện chủ thể và mặt phẳng.</p>
+            </article>
+            <article class="step reveal delay-1">
+              <span class="step-number">02</span>
+              <div class="step-visual choose-visual" aria-hidden="true">
+                <span>☀</span><span>✦</span><span>◒</span>
+              </div>
+              <h3>Chọn hiệu ứng</h3>
+              <p>Chọn phông nền, hướng sáng hoặc hiệu ứng. Xem trước trước khi sử dụng credit.</p>
+            </article>
+            <article class="step reveal delay-2">
+              <span class="step-number">03</span>
+              <div class="step-visual export-visual" aria-hidden="true">
+                <div><span></span></div><b>4K</b>
+              </div>
+              <h3>Xuất kết quả</h3>
+              <p>Tải ảnh chất lượng cao hoặc tiếp tục hoàn thiện trong phần mềm hậu kỳ của bạn.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing section-pad" id="bang-gia">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <span class="kicker">Credit linh hoạt</span>
+              <h2>Chỉ trả cho những gì bạn tạo</h2>
+            </div>
+            <p>Không phí duy trì hàng tháng. Credit không hết hạn và dùng cho toàn bộ công cụ.</p>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="price-card reveal">
+              <span class="plan-name">Dùng thử</span>
+              <h3>Miễn phí</h3>
+              <p>Đủ để trải nghiệm toàn bộ quy trình.</p>
+              <div class="plan-credit"><b>20</b><span>credits</span></div>
+              <ul><li>Xuất ảnh Full HD</li><li>Toàn bộ công cụ AI</li><li>Dùng trên 1 thiết bị</li></ul>
+              <a class="button button-ghost download-trigger" href="#tai-xuong">Bắt đầu miễn phí</a>
+            </article>
+
+            <article class="price-card featured reveal delay-1">
+              <span class="popular">Phổ biến nhất</span>
+              <span class="plan-name">Creator</span>
+              <h3>390.000đ</h3>
+              <p>Cho nhiếp ảnh gia làm việc thường xuyên.</p>
+              <div class="plan-credit"><b>200</b><span>credits</span></div>
+              <ul><li>Xuất ảnh chất lượng 4K</li><li>Xử lý ưu tiên</li><li>Dùng trên 2 thiết bị</li></ul>
+              <a class="button button-primary" href="#tai-xuong">Chọn Creator</a>
+            </article>
+
+            <article class="price-card reveal delay-2">
+              <span class="plan-name">Studio</span>
+              <h3>Liên hệ</h3>
+              <p>Cho đội nhóm có sản lượng lớn mỗi tháng.</p>
+              <div class="plan-credit"><b>2.000+</b><span>credits</span></div>
+              <ul><li>Quản lý nhiều thành viên</li><li>Hỗ trợ triển khai riêng</li><li>Ưu tiên tính năng mới</li></ul>
+              <a class="button button-ghost" href="mailto:hello@psvisualtool.vn">Tư vấn cho studio</a>
+            </article>
+          </div>
+          <p class="pricing-note reveal">Mỗi lượt tạo hoặc áp dụng hiệu ứng sử dụng 1 credit. Bạn luôn được xem trước trước khi xác nhận.</p>
+        </div>
+      </section>
+
+      <section class="download section-pad" id="tai-xuong">
+        <div class="container download-shell reveal">
+          <div class="download-copy">
+            <span class="kicker">Sẵn sàng cho khung hình tiếp theo?</span>
+            <h2>Bắt đầu với 20 credits miễn phí.</h2>
+            <p>Không cần thẻ thanh toán. Cài đặt một lần, cập nhật tự động.</p>
+          </div>
+          <div class="download-options">
+            <a class="download-card download-trigger" href="#" data-platform="Windows">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.6 10.4 4v7H3V5.6Zm8.4-1.8L21 2v9h-9.6V3.8ZM3 12h7.4v7L3 17.4V12Zm8.4 0H21v10l-9.6-1.9V12Z" /></svg>
+              <span><b>Tải cho Windows</b><small>Windows 10/11 · 64-bit</small></span>
+              <i>↓</i>
+            </a>
+            <a class="download-card download-trigger" href="#" data-platform="macOS">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.7 12.8c0-2.8 2.3-4.1 2.4-4.2a5.2 5.2 0 0 0-4.1-2.2c-1.7-.2-3.4 1-4.3 1-.9 0-2.3-1-3.8-1-2 0-3.9 1.2-5 3.1-2.2 3.8-.6 9.4 1.6 12.5 1 1.5 2.3 3.2 3.9 3.1 1.5-.1 2.1-1 4-1 1.8 0 2.4 1 4 1 1.7 0 2.8-1.5 3.8-3 1.2-1.8 1.7-3.5 1.7-3.6-.1 0-4.2-1.6-4.2-5.7ZM13.9 4.6A5.1 5.1 0 0 0 15.1 1a5.2 5.2 0 0 0-3.4 1.7 4.8 4.8 0 0 0-1.3 3.5 4.3 4.3 0 0 0 3.5-1.6Z" /></svg>
+              <span><b>Tải cho Mac</b><small>macOS 12+ · Apple Silicon</small></span>
+              <i>↓</i>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <a class="brand" href="#top" aria-label="PS Visual Tool — về đầu trang">
+          <svg class="brand-mark" viewBox="0 0 54 54" aria-hidden="true"><path d="M27 3 48 15v24L27 51 6 39V15L27 3Z" /><path d="m9 17 18 10 18-10M9 29l18 10 18-10M27 27v24" /><path d="m17 22 10-6 10 6" /></svg>
+          <span class="brand-name"><b>PS</b><i>Visual Tool</i></span>
+        </a>
+        <p>AI sáng tạo dành cho nhiếp ảnh gia Việt.</p>
+        <div class="footer-links"><a href="#tinh-nang">Tính năng</a><a href="#bang-gia">Bảng giá</a><a href="mailto:hello@psvisualtool.vn">Liên hệ</a></div>
+        <small>© 2026 PS Visual Tool</small>
+      </div>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" aria-hidden="true">
+      <span class="toast-icon">i</span>
+      <div><b>Bản cài đặt đang được chuẩn bị</b><p>Liên kết tải sẽ được cập nhật tại đây.</p></div>
+      <button type="button" aria-label="Đóng thông báo">×</button>
+    </div>
+
+    <script src="/app.js?v=3" defer></script>
+  </body>
+</html>
