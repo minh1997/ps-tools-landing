@@ -26,8 +26,7 @@ function hideToast() {
 }
 
 document.querySelectorAll(".download-trigger").forEach((trigger) => {
-  trigger.addEventListener("click", (event) => {
-    event.preventDefault();
+  trigger.addEventListener("click", () => {
     toast?.classList.add("show");
     toast?.setAttribute("aria-hidden", "false");
     clearTimeout(toastTimer);
