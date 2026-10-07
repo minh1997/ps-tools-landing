@@ -1,6 +1,6 @@
 import { readFile, access } from "node:fs/promises";
 
-const required = ["public/index.html", "public/styles.css", "public/app.js", "public/assets/ps-studio-hero-ui.webp", "public/downloads/PS_V1.0.1.ccx"];
+const required = ["public/index.html", "public/styles.css", "public/app.js", "public/assets/ps-studio-hero-ui.webp", "public/assets/ps-tools-guide.webp", "public/downloads/PS_V1.0.1.ccx"];
 await Promise.all(required.map((file) => access(file)));
 
 const html = await readFile("public/index.html", "utf8");
@@ -13,6 +13,7 @@ const checks = [
   [html.includes('id="tinh-nang"'), "Feature grid section exists"],
   [(html.match(/class="tool-card"/g) || []).length === 15, "All 15 feature cards are present"],
   [html.includes('id="huong-dan"') && html.includes("Cài đặt trên Windows") && html.includes("Cài đặt trên macOS"), "Windows and macOS CCX installation guides are present"],
+  [html.includes("Photoshop 27.0 trở lên") && html.includes("PS Tools V1") && html.includes("ps-tools-guide.webp"), "Version requirement and illustrated plugin check are present"],
   [html.includes('href="#huong-dan"'), "Guide navigation points to the installation section"],
   [css.includes("@media(max-width:640px)"), "Mobile layout is present"],
   [html.includes('href="/downloads/PS_V1.0.1.ccx"') && html.includes('download="PS_V1.0.1.ccx"'), "Download button links to the CCX installer"],
