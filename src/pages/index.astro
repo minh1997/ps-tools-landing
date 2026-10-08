@@ -2,11 +2,11 @@
 import "../styles/global.css";
 
 const creditPlans = [
-  { credits: "200", price: "300K", benefits: ["Phù hợp dùng thử", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
-  { credits: "400", price: "580K", benefits: ["Phù hợp cá nhân", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
-  { credits: "800", price: "1.100K", benefits: ["Phù hợp studio nhỏ", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
-  { credits: "1.000", price: "1.300K", popular: true, benefits: ["Phù hợp studio", "Tiết kiệm chi phí", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
-  { credits: "2.000", price: "2.500K", benefits: ["Phù hợp studio lớn", "Hiệu quả chi phí cao nhất", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
+  { credits: "200", value: 200, price: "300K", benefits: ["Phù hợp dùng thử", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
+  { credits: "400", value: 400, price: "580K", benefits: ["Phù hợp cá nhân", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
+  { credits: "800", value: 800, price: "1.100K", benefits: ["Phù hợp studio nhỏ", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
+  { credits: "1.000", value: 1000, price: "1.300K", popular: true, benefits: ["Phù hợp studio", "Tiết kiệm chi phí", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
+  { credits: "2.000", value: 2000, price: "2.500K", benefits: ["Phù hợp studio lớn", "Hiệu quả chi phí cao nhất", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
 ];
 ---
 
@@ -90,6 +90,16 @@ const creditPlans = [
             <h2 id="pricing-title">Bảng giá gói <em>Credit</em></h2>
             <p>Chọn số credit phù hợp với nhu cầu chỉnh sửa ảnh của bạn</p>
           </div>
+          <form class="credit-email-form" id="credit-order-form" novalidate>
+            <label for="credit-email">Email nhận credit</label>
+            <div class="credit-email-field">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4V6Zm0 1 8 6 8-6" /></svg>
+              <input id="credit-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="ban@example.com" aria-describedby="credit-email-hint credit-order-status" required />
+              <span aria-hidden="true">✓</span>
+            </div>
+            <p id="credit-email-hint">Nhập đúng email bạn dùng để đăng nhập PS Visual Tool để nhận credit.</p>
+            <p class="credit-order-status" id="credit-order-status" role="status" aria-live="polite"></p>
+          </form>
           <div class="price-grid">
             {creditPlans.map((plan) => (
               <article class:list={["price-card", { popular: plan.popular }]}>
@@ -101,7 +111,7 @@ const creditPlans = [
                 <ul class="price-benefits">
                   {plan.benefits.map((benefit) => <li><span>✓</span>{benefit}</li>)}
                 </ul>
-                <a class="price-action" href="#lien-he" aria-label={`Mua gói ${plan.credits} credit`}>Mua ngay</a>
+                <button class="price-action" type="button" data-credit-package={plan.value} data-order-endpoint={`/api/v1/payments/packages/credits-${plan.value}/orders`} aria-label={`Mua gói ${plan.credits} credit`}><span>Mua ngay</span><b aria-hidden="true">›</b></button>
               </article>
             ))}
           </div>
