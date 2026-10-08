@@ -2,12 +2,18 @@
   "name": "ps-visual-tool-landing",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "check": "node scripts/check-site.mjs"
+    "dev": "astro dev",
+    "build": "astro build && node scripts/check-build.mjs",
+    "preview": "npm run build && wrangler dev",
+    "check": "astro check && node scripts/check-site.mjs",
+    "deploy": "npm run check && npm run build && wrangler deploy"
   },
   "devDependencies": {
+    "@astrojs/check": "latest",
+    "astro": "latest",
+    "typescript": "latest",
     "wrangler": "^4.42.0"
   }
 }

@@ -1,12 +1,16 @@
 import { readFile, access } from "node:fs/promises";
 
-const required = ["public/index.html", "public/styles.css", "public/app.js", "public/assets/ps-studio-hero-ui.webp", "public/assets/ps-tools-guide.webp", "public/downloads/PS_V1.0.1.ccx"];
+const required = ["astro.config.mjs", "src/pages/index.astro", "src/styles/global.css", "src/scripts/app.js", "public/assets/ps-studio-hero-ui.webp", "public/assets/ps-tools-guide.webp", "public/downloads/PS_V1.0.1.ccx"];
 await Promise.all(required.map((file) => access(file)));
 
-const html = await readFile("public/index.html", "utf8");
-const css = await readFile("public/styles.css", "utf8");
-const js = await readFile("public/app.js", "utf8");
+const html = await readFile("src/pages/index.astro", "utf8");
+const css = await readFile("src/styles/global.css", "utf8");
+const js = await readFile("src/scripts/app.js", "utf8");
+const wrangler = await readFile("wrangler.jsonc", "utf8");
 const checks = [
+  [html.includes('import "../styles/global.css"'), "Astro page imports the global stylesheet"],
+  [html.includes('src="../scripts/app.js"'), "Astro bundles the landing page interactions"],
+  [wrangler.includes('"directory": "./dist"'), "Cloudflare Worker serves the Astro build output"],
   [html.includes('lang="vi"'), "HTML language is set to Vietnamese"],
   [html.includes("viewport"), "Responsive viewport is configured"],
   [html.includes("ps-studio-hero-ui.webp"), "Updated UI hero artwork is referenced"],
