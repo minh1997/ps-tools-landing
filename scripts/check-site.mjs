@@ -16,6 +16,8 @@ const checks = [
   [html.includes("ps-studio-hero-ui.webp"), "Updated UI hero artwork is referenced"],
   [html.includes('id="tinh-nang"'), "Feature grid section exists"],
   [(html.match(/class="tool-card"/g) || []).length === 15, "All 15 feature cards are present"],
+  [html.includes('id="bang-gia"') && html.includes('href="#bang-gia"'), "Pricing section is linked from navigation"],
+  [(html.match(/credits:/g) || []).length === 5 && html.includes('popular: true'), "All five credit plans and the popular plan are configured"],
   [html.includes('id="huong-dan"') && html.includes("Cài đặt trên Windows") && html.includes("Cài đặt trên macOS"), "Windows and macOS CCX installation guides are present"],
   [html.includes("Photoshop 27.0 trở lên") && html.includes("PS Tools V1") && html.includes("ps-tools-guide.webp"), "Version requirement and illustrated plugin check are present"],
   [html.includes('href="#huong-dan"'), "Guide navigation points to the installation section"],

@@ -1,5 +1,13 @@
 ---
 import "../styles/global.css";
+
+const creditPlans = [
+  { credits: "200", price: "300K", benefits: ["Phù hợp dùng thử", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
+  { credits: "400", price: "580K", benefits: ["Phù hợp cá nhân", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
+  { credits: "800", price: "1.100K", benefits: ["Phù hợp studio nhỏ", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
+  { credits: "1.000", price: "1.300K", popular: true, benefits: ["Phù hợp studio", "Tiết kiệm chi phí", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
+  { credits: "2.000", price: "2.500K", benefits: ["Phù hợp studio lớn", "Hiệu quả chi phí cao nhất", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
+];
 ---
 
 <!doctype html>
@@ -26,11 +34,11 @@ import "../styles/global.css";
           <span class="brand-name"><b>P &amp; S</b><i>Visual Tool</i></span>
         </a>
         <nav class="desktop-nav" aria-label="Điều hướng chính">
-          <a class="active" href="#top">Trang chủ</a><a href="#tinh-nang">Tính năng</a><a href="#tinh-nang">Bảng giá</a><a href="#huong-dan">Hướng dẫn</a><a href="#lien-he">Liên hệ</a>
+          <a class="active" href="#top">Trang chủ</a><a href="#tinh-nang">Tính năng</a><a href="#bang-gia">Bảng giá</a><a href="#huong-dan">Hướng dẫn</a><a href="#lien-he">Liên hệ</a>
         </nav>
         <div class="nav-actions"><span class="version">V1.0.1</span><button class="menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false"><span></span><span></span></button></div>
       </div>
-      <nav class="mobile-nav" aria-label="Điều hướng di động"><a href="#top">Trang chủ</a><a href="#tinh-nang">Tính năng</a><a href="#tinh-nang">Bảng giá</a><a href="#huong-dan">Hướng dẫn</a><a href="#lien-he">Liên hệ</a></nav>
+      <nav class="mobile-nav" aria-label="Điều hướng di động"><a href="#top">Trang chủ</a><a href="#tinh-nang">Tính năng</a><a href="#bang-gia">Bảng giá</a><a href="#huong-dan">Hướng dẫn</a><a href="#lien-he">Liên hệ</a></nav>
     </header>
 
     <main>
@@ -71,6 +79,33 @@ import "../styles/global.css";
             <article class="tool-card"><div class="tool-icon flower">❦</div><div><h3>Thêm cánh hoa</h3><p>Thêm cánh hoa mềm mại, tự nhiên và có chiều sâu</p></div><b>›</b></article>
             <article class="tool-card"><div class="tool-icon leaf">◈</div><div><h3>Thêm lá rơi</h3><p>Thêm lá rơi tự nhiên theo chuyển động và không gian</p></div><b>›</b></article>
           </div>
+        </div>
+      </section>
+
+      <section class="pricing" id="bang-gia" aria-labelledby="pricing-title">
+        <div class="pricing-glow" aria-hidden="true"></div>
+        <div class="container pricing-inner">
+          <div class="section-heading pricing-heading">
+            <div class="heading-kicker"><span></span> Bảng giá <span></span></div>
+            <h2 id="pricing-title">Bảng giá gói <em>Credit</em></h2>
+            <p>Chọn số credit phù hợp với nhu cầu chỉnh sửa ảnh của bạn</p>
+          </div>
+          <div class="price-grid">
+            {creditPlans.map((plan) => (
+              <article class:list={["price-card", { popular: plan.popular }]}>
+                {plan.popular && <div class="popular-badge"><span>♛</span> Phổ biến nhất</div>}
+                <div class="credit-mark" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="credit-amount">{plan.credits}</div>
+                <div class="credit-label">Credit</div>
+                <div class="price-box"><strong>{plan.price}</strong><span>VND</span></div>
+                <ul class="price-benefits">
+                  {plan.benefits.map((benefit) => <li><span>✓</span>{benefit}</li>)}
+                </ul>
+                <a class="price-action" href="#lien-he" aria-label={`Mua gói ${plan.credits} credit`}>Mua ngay</a>
+              </article>
+            ))}
+          </div>
+          <p class="pricing-note"><span>✓</span> Credit không giới hạn thời gian sử dụng và áp dụng cho toàn bộ tính năng PS Visual Tool.</p>
         </div>
       </section>
 
