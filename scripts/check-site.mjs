@@ -26,7 +26,7 @@ const checks = [
   [html.includes("Photoshop 27.0 trở lên") && html.includes("PS Tools V1") && html.includes("ps-tools-guide.webp"), "Version requirement and illustrated plugin check are present"],
   [html.includes('href="#huong-dan"'), "Guide navigation points to the installation section"],
   [css.includes("@media(max-width:640px)"), "Mobile layout is present"],
-  [html.includes('href="/downloads/PS_V1.0.1.ccx"') && html.includes('download="PS_V1.0.1.ccx"'), "Download button links to the CCX installer"],
+  [html.includes('href="/downloads/PS_V1.0.1.ccx') && html.includes('download="PS_V1.0.1.ccx"'), "Download button links to the CCX installer"],
   [js.includes("download-trigger") && js.includes("setTimeout(hideToast, 4500)"), "Download feedback is wired without blocking the download"],
 ];
 const failed = checks.filter(([pass]) => !pass);
