@@ -29,9 +29,11 @@ const checks = [
   [html.includes('href="#huong-dan"'), "Guide navigation points to the installation section"],
   [css.includes("@media(max-width:640px)"), "Mobile layout is present"],
   [html.includes('href="/downloads/PS_V1.0.2.ccx') && html.includes('download="PS_V1.0.2.ccx"'), "Download button links to the current CCX installer"],
+  [html.includes("Tải cho Windows") && html.includes("Tải cho macOS") && html.includes('class="download-button download-trigger windows-download"') && html.includes('class="download-button download-trigger mac-download"'), "Hero provides separate Windows and macOS download buttons"],
+  [html.includes('href="/downloads/PS-Visual-Tool-Windows-v1.0.2.zip"') && html.includes('href="/downloads/PS_V1.0.2.ccx?v=1.0"'), "Hero download buttons target the Windows ZIP and macOS CCX"],
   [html.includes('href="/downloads/PS-Visual-Tool-Windows-v1.0.2.zip"') && html.includes("Không cần mở CMD"), "Windows guide links to the self-contained ZIP installer"],
   [windowsInstaller.includes('/remove "%PLUGIN_NAME%"') && windowsInstaller.includes('/list all') && windowsInstaller.indexOf('/remove "%PLUGIN_NAME%"') < windowsInstaller.indexOf('/install "%CCX_FILE%"'), "Windows installer removes an existing plugin before installing the new version"],
-  [js.includes("download-trigger") && js.includes("setTimeout(hideToast, 4500)"), "Download feedback is wired without blocking the download"],
+  [js.includes("download-trigger") && js.includes("dataset.downloadTitle") && js.includes("setTimeout(hideToast, 4500)"), "Platform-specific download feedback is wired without blocking the download"],
 ];
 const failed = checks.filter(([pass]) => !pass);
 for (const [pass, message] of checks) console.log(`${pass ? "✓" : "✗"} ${message}`);

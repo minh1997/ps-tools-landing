@@ -18,6 +18,8 @@ mobileNav?.querySelectorAll("a").forEach((link) => link.addEventListener("click"
 
 const toast = document.querySelector(".toast");
 const toastClose = toast?.querySelector("button");
+const toastTitle = toast?.querySelector("strong");
+const toastMessage = toast?.querySelector("p");
 let toastTimer;
 
 function hideToast() {
@@ -27,6 +29,8 @@ function hideToast() {
 
 document.querySelectorAll(".download-trigger").forEach((trigger) => {
   trigger.addEventListener("click", () => {
+    if (toastTitle) toastTitle.textContent = trigger.dataset.downloadTitle || "Đang tải PS Visual Tool";
+    if (toastMessage) toastMessage.textContent = trigger.dataset.downloadMessage || "File cài đặt đã bắt đầu tải xuống.";
     toast?.classList.add("show");
     toast?.setAttribute("aria-hidden", "false");
     clearTimeout(toastTimer);

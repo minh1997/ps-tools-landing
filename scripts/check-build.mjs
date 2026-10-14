@@ -26,6 +26,7 @@ const checks = [
   [installer.size > 0, "CCX installer is included in the Worker assets"],
   [html.includes("Cai-dat-PS-Visual-Tool-Windows.cmd") && windowsInstaller.size > 0, "Windows command-line installer is included in the Worker assets"],
   [html.includes("PS-Visual-Tool-Windows-v1.0.2.zip") && windowsBundle.size > 200_000, "Self-contained Windows ZIP is included in the Worker assets"],
+  [html.includes("Tải cho Windows") && html.includes("Tải cho macOS") && html.includes("windows-download") && html.includes("mac-download"), "Built hero provides separate Windows and macOS downloads"],
   [windowsInstallerSource.includes('/remove "%PLUGIN_NAME%"') && windowsInstallerSource.includes('/install "%CCX_FILE%"'), "Built Windows installer replaces an existing plugin before installation"],
 ];
 

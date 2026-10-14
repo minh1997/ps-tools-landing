@@ -54,7 +54,10 @@ const creditPlans = [
             <ul class="hero-benefits">
               <li><span>✓</span> Thao tác 1 click, nhanh và chính xác</li><li><span>✓</span> Giữ nguyên chi tiết và bố cục gốc</li><li><span>✓</span> Bối cảnh chân thực, chi tiết và có chiều sâu</li><li><span>✓</span> Nhiều hiệu ứng chuyên nghiệp cho ảnh phông</li>
             </ul>
-            <a class="download-button download-trigger" href="/downloads/PS_V1.0.2.ccx?v=1.0" download="PS_V1.0.2.ccx" id="tai-xuong"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 15v4h14v-4" /></svg><strong>Tải ngay PS Visual Tool</strong><span>›</span></a>
+            <div class="hero-downloads" id="tai-xuong" aria-label="Tải PS Visual Tool theo hệ điều hành">
+              <a class="download-button download-trigger windows-download" href="/downloads/PS-Visual-Tool-Windows-v1.0.2.zip" download="PS-Visual-Tool-Windows-v1.0.2.zip" data-download-title="Đang tải bản Windows" data-download-message="Bộ cài ZIP tự động đang được tải xuống."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.6 10.4 4v7H3V5.6Zm8.4-1.8L21 2v9h-9.6V3.8ZM3 12h7.4v7L3 17.4V12Zm8.4 0H21v10l-9.6-1.9V12Z" /></svg><div><strong>Tải cho Windows</strong><small>ZIP · tự động cài</small></div><span>›</span></a>
+              <a class="download-button download-trigger mac-download" href="/downloads/PS_V1.0.2.ccx?v=1.0" download="PS_V1.0.2.ccx" data-download-title="Đang tải bản macOS" data-download-message="File cài đặt CCX đang được tải xuống."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.7 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.2 1-4 1-.9 0-2.3-1-3.7-.9-1.9 0-3.6 1.1-4.5 2.8-1.9 3.3-.5 8.2 1.3 10.9.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.6-.9 1.7 0 2.2.9 3.6.8 1.5 0 2.4-1.3 3.3-2.7 1-1.5 1.5-3 1.5-3.1-.1 0-2.8-1.1-2.8-4.8ZM14 5.1c.7-.9 1.2-2.2 1.1-3.5-1.1.1-2.5.8-3.3 1.7-.7.8-1.3 2.1-1.2 3.4 1.3.1 2.6-.6 3.4-1.6Z" /></svg><div><strong>Tải cho macOS</strong><small>CCX · Creative Cloud</small></div><span>›</span></a>
+            </div>
             <div class="platform-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.6 10.4 4v7H3V5.6Zm8.4-1.8L21 2v9h-9.6V3.8ZM3 12h7.4v7L3 17.4V12Zm8.4 0H21v10l-9.6-1.9V12Z" /></svg><span class="apple">●</span><span>Hỗ trợ Windows &amp; Mac</span><i></i><span>Yêu cầu Photoshop 27 trở lên</span></div>
           </div>
         </div>
@@ -165,7 +168,7 @@ const creditPlans = [
     </main>
 
     <footer id="lien-he"><div class="container footer-inner"><a class="brand" href="#top" aria-label="PS Visual Tool — về trang chủ"><svg class="brand-mark" viewBox="0 0 54 54" aria-hidden="true"><path d="M27 3 48 15v24L27 51 6 39V15L27 3Z" /><path d="m9 17 18 10 18-10M9 29l18 10 18-10M27 27v24" /><path d="m17 22 10-6 10 6" /></svg><span class="brand-name"><b>P &amp; S</b><i>Visual Tool</i></span></a><div class="credit-line"></div><p>Developed by<br /><strong>Anh Sơn &amp; Phó KT</strong></p></div></footer>
-    <div class="toast" role="status" aria-live="polite" aria-hidden="true"><span>✓</span><div><strong>Đang tải PS Visual Tool</strong><p>File cài đặt .ccx đã bắt đầu tải xuống.</p></div><button type="button" aria-label="Đóng thông báo">×</button></div>
+    <div class="toast" role="status" aria-live="polite" aria-hidden="true"><span>✓</span><div><strong>Đang tải PS Visual Tool</strong><p>File cài đặt đã bắt đầu tải xuống.</p></div><button type="button" aria-label="Đóng thông báo">×</button></div>
     <script src="../scripts/app.js"></script>
   </body>
 </html>
