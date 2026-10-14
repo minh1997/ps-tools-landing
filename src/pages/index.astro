@@ -7,6 +7,7 @@ const creditPlans = [
   { credits: "800", value: 800, price: "1.100K", benefits: ["Phù hợp studio nhỏ", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
   { credits: "1.000", value: 1000, price: "1.300K", popular: true, benefits: ["Phù hợp studio", "Tiết kiệm chi phí", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
   { credits: "2.000", value: 2000, price: "2.500K", benefits: ["Phù hợp studio lớn", "Hiệu quả chi phí cao nhất", "Đầy đủ tính năng", "Không giới hạn thời gian"] },
+  { credits: "1 năm", price: "2.800K", annual: true, benefits: ["Nhận 1.000 credit mỗi tuần", "Tổng 52.000 credit / năm", "Đầy đủ tính năng", "Ưu tiên cập nhật", "Hỗ trợ ưu tiên"] },
 ];
 ---
 
@@ -102,16 +103,22 @@ const creditPlans = [
           </form>
           <div class="price-grid">
             {creditPlans.map((plan) => (
-              <article class:list={["price-card", { popular: plan.popular }]}>
+              <article class:list={["price-card", { popular: plan.popular, annual: plan.annual }]}>
                 {plan.popular && <div class="popular-badge"><span>♛</span> Phổ biến nhất</div>}
+                {plan.annual && <div class="annual-badge">Mới</div>}
                 <div class="credit-mark" aria-hidden="true"><i></i><i></i><i></i></div>
                 <div class="credit-amount">{plan.credits}</div>
-                <div class="credit-label">Credit</div>
-                <div class="price-box"><strong>{plan.price}</strong><span>VND</span></div>
+                <div class="credit-label">{plan.annual ? "52 tuần" : "Credit"}</div>
+                {plan.annual && <div class="annual-credit"><strong>1.000 credit</strong><span>mỗi tuần</span></div>}
+                <div class="price-box"><strong>{plan.price}</strong><span>{plan.annual ? "VND / NĂM" : "VND"}</span></div>
                 <ul class="price-benefits">
                   {plan.benefits.map((benefit) => <li><span>✓</span>{benefit}</li>)}
                 </ul>
-                <button class="price-action" type="button" data-credit-package={plan.value} data-order-endpoint={`/api/v1/payments/packages/credits-${plan.value}/orders`} aria-label={`Mua gói ${plan.credits} credit`}><span>Mua ngay</span><b aria-hidden="true">›</b></button>
+                {plan.annual ? (
+                  <a class="price-action annual-action" href="#lien-he" aria-label="Liên hệ tư vấn gói 1 năm"><span>Liên hệ</span><b aria-hidden="true">›</b></a>
+                ) : (
+                  <button class="price-action" type="button" data-credit-package={plan.value} data-order-endpoint={`/api/v1/payments/packages/credits-${plan.value}/orders`} aria-label={`Mua gói ${plan.credits} credit`}><span>Mua ngay</span><b aria-hidden="true">›</b></button>
+                )}
               </article>
             ))}
           </div>
