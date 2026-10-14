@@ -5,12 +5,15 @@ const required = [
   "dist/assets/ps-studio-hero-ui.webp",
   "dist/assets/ps-tools-guide.webp",
   "dist/downloads/PS_V1.0.2.ccx",
+  "dist/downloads/Cai-dat-PS-Visual-Tool-Windows.cmd",
 ];
 
 await Promise.all(required.map((file) => access(file)));
 
 const html = await readFile("dist/index.html", "utf8");
 const installer = await stat("dist/downloads/PS_V1.0.2.ccx");
+const windowsInstaller = await stat("dist/downloads/Cai-dat-PS-Visual-Tool-Windows.cmd");
+const windowsInstallerSource = await readFile("dist/downloads/Cai-dat-PS-Visual-Tool-Windows.cmd", "utf8");
 const checks = [
   [html.includes("PS Visual Tool"), "Astro generated the landing page"],
   [html.includes("/downloads/PS_V1.0.2.ccx"), "Built page links to the current CCX installer"],
@@ -19,6 +22,8 @@ const checks = [
   [html.includes("2.800K") && html.includes("52.000 credit / năm") && html.includes("annual-action"), "Built page includes the annual contact plan"],
   [html.includes('id="credit-email"') && html.includes("credits-2000/orders"), "Built page includes the email checkout flow for every credit package"],
   [installer.size > 0, "CCX installer is included in the Worker assets"],
+  [html.includes("Cai-dat-PS-Visual-Tool-Windows.cmd") && windowsInstaller.size > 0, "Windows command-line installer is included in the Worker assets"],
+  [windowsInstallerSource.includes('/remove "%PLUGIN_NAME%"') && windowsInstallerSource.includes('/install "%CCX_FILE%"'), "Built Windows installer replaces an existing plugin before installation"],
 ];
 
 const failed = checks.filter(([pass]) => !pass);

@@ -1,6 +1,6 @@
 import { readFile, access } from "node:fs/promises";
 
-const required = ["astro.config.mjs", "src/pages/index.astro", "src/styles/global.css", "src/scripts/app.js", "src/worker.js", "public/assets/ps-studio-hero-ui.webp", "public/assets/ps-tools-guide.webp", "public/downloads/PS_V1.0.2.ccx"];
+const required = ["astro.config.mjs", "src/pages/index.astro", "src/styles/global.css", "src/scripts/app.js", "src/worker.js", "public/assets/ps-studio-hero-ui.webp", "public/assets/ps-tools-guide.webp", "public/downloads/PS_V1.0.2.ccx", "public/downloads/Cai-dat-PS-Visual-Tool-Windows.cmd"];
 await Promise.all(required.map((file) => access(file)));
 
 const html = await readFile("src/pages/index.astro", "utf8");
@@ -8,6 +8,7 @@ const css = await readFile("src/styles/global.css", "utf8");
 const js = await readFile("src/scripts/app.js", "utf8");
 const wrangler = await readFile("wrangler.jsonc", "utf8");
 const worker = await readFile("src/worker.js", "utf8");
+const windowsInstaller = await readFile("public/downloads/Cai-dat-PS-Visual-Tool-Windows.cmd", "utf8");
 const checks = [
   [html.includes('import "../styles/global.css"'), "Astro page imports the global stylesheet"],
   [html.includes('src="../scripts/app.js"'), "Astro bundles the landing page interactions"],
@@ -28,6 +29,8 @@ const checks = [
   [html.includes('href="#huong-dan"'), "Guide navigation points to the installation section"],
   [css.includes("@media(max-width:640px)"), "Mobile layout is present"],
   [html.includes('href="/downloads/PS_V1.0.2.ccx') && html.includes('download="PS_V1.0.2.ccx"'), "Download button links to the current CCX installer"],
+  [html.includes('href="/downloads/Cai-dat-PS-Visual-Tool-Windows.cmd"') && html.includes("Unified Plugin Installer Agent"), "Windows guide links to the command-line installer"],
+  [windowsInstaller.includes('/remove "%PLUGIN_NAME%"') && windowsInstaller.includes('/list all') && windowsInstaller.indexOf('/remove "%PLUGIN_NAME%"') < windowsInstaller.indexOf('/install "%CCX_FILE%"'), "Windows installer removes an existing plugin before installing the new version"],
   [js.includes("download-trigger") && js.includes("setTimeout(hideToast, 4500)"), "Download feedback is wired without blocking the download"],
 ];
 const failed = checks.filter(([pass]) => !pass);

@@ -136,12 +136,13 @@ const creditPlans = [
             <article class="install-panel windows">
               <div class="platform-title"><span class="platform-symbol" aria-hidden="true">⊞</span><div><p>Windows</p><h3>Cài đặt trên Windows</h3></div></div>
               <ol class="install-steps">
-                <li><b>01</b><div><strong>Tải file cài đặt</strong><p>Nhấn “Tải ngay PS Visual Tool” và chờ file <code>PS_V1.0.2.ccx</code> xuất hiện trong thư mục Downloads.</p></div></li>
-                <li><b>02</b><div><strong>Mở file .ccx</strong><p>Nháy đúp file vừa tải. Adobe Creative Cloud sẽ mở trình cài đặt plugin.</p></div></li>
-                <li><b>03</b><div><strong>Xác nhận cài đặt</strong><p>Làm theo thông báo của Creative Cloud cho đến khi quá trình hoàn tất.</p></div></li>
+                <li><b>01</b><div><strong>Tải 2 file vào Downloads</strong><p>Tải <code>PS_V1.0.2.ccx</code> và script cài đặt Windows bên dưới vào cùng thư mục Downloads.</p></div></li>
+                <li><b>02</b><div><strong>Chạy script cài đặt</strong><p>Nháy đúp <code>Cai-dat-PS-Visual-Tool-Windows.cmd</code>. Script sẽ tự tìm Adobe Unified Plugin Installer Agent và file plugin.</p></div></li>
+                <li><b>03</b><div><strong>Tự động nâng cấp sạch</strong><p>Script kiểm tra và gỡ hoàn toàn <em>PS Tools V1</em> cũ trước khi cài bản mới, tránh trùng nhiều phiên bản.</p></div></li>
                 <li><b>04</b><div><strong>Mở trong Photoshop</strong><p>Khởi động Photoshop 27 trở lên, vào menu <em>Plugins</em> và chọn <em>PS Tools V1</em>.</p></div></li>
               </ol>
-              <div class="install-tip"><strong>Không mở được file?</strong><span>Nhấp phải file → <em>Open with</em> → chọn <em>Unified Plugin Installer Agent</em> trong Adobe Desktop Common.</span></div>
+              <a class="windows-installer-button" href="/downloads/Cai-dat-PS-Visual-Tool-Windows.cmd" download="Cai-dat-PS-Visual-Tool-Windows.cmd"><span aria-hidden="true">↓</span><strong>Tải script cài đặt Windows (.cmd)</strong></a>
+              <div class="install-tip"><strong>Dùng Command Prompt?</strong><span>Chạy <code>Cai-dat-PS-Visual-Tool-Windows.cmd "C:\duong-dan\PS_V1.0.2.ccx"</code>. Hãy đóng Photoshop trước khi chạy để script có thể gỡ bản cũ an toàn.</span></div>
             </article>
             <article class="install-panel macos">
               <div class="platform-title"><span class="platform-symbol apple-symbol" aria-hidden="true">●</span><div><p>macOS</p><h3>Cài đặt trên macOS</h3></div></div>
