@@ -1,6 +1,6 @@
 import { readFile, access } from "node:fs/promises";
 
-const required = ["astro.config.mjs", "src/pages/index.astro", "src/styles/global.css", "src/scripts/app.js", "src/worker.js", "public/assets/ps-studio-hero-ui.webp", "public/assets/ps-tools-guide.webp", "public/downloads/PS_V1.0.2.ccx", "public/downloads/Cai-dat-PS-Visual-Tool-Windows.cmd", "public/downloads/PS-Visual-Tool-Windows-v1.0.2.zip"];
+const required = ["astro.config.mjs", "src/pages/index.astro", "src/styles/global.css", "src/scripts/app.js", "src/worker.js", "scripts/package-windows.mjs", "public/assets/ps-studio-hero-ui.webp", "public/assets/ps-tools-guide.webp", "public/downloads/PS_V1.0.2.ccx", "public/downloads/Cai-dat-PS-Visual-Tool-Windows.cmd", "public/downloads/PS-Visual-Tool-Windows-v1.0.2.zip"];
 await Promise.all(required.map((file) => access(file)));
 
 const html = await readFile("src/pages/index.astro", "utf8");
@@ -9,6 +9,7 @@ const js = await readFile("src/scripts/app.js", "utf8");
 const wrangler = await readFile("wrangler.jsonc", "utf8");
 const worker = await readFile("src/worker.js", "utf8");
 const windowsInstaller = await readFile("public/downloads/Cai-dat-PS-Visual-Tool-Windows.cmd", "utf8");
+const packageJson = JSON.parse(await readFile("package.json", "utf8"));
 const checks = [
   [html.includes('import "../styles/global.css"'), "Astro page imports the global stylesheet"],
   [html.includes('src="../scripts/app.js"'), "Astro bundles the landing page interactions"],
@@ -33,6 +34,7 @@ const checks = [
   [html.includes('href="/downloads/PS-Visual-Tool-Windows-v1.0.2.zip"') && html.includes('href="/downloads/PS_V1.0.2.ccx?v=1.0"'), "Hero download buttons target the Windows ZIP and macOS CCX"],
   [html.includes('href="/downloads/PS-Visual-Tool-Windows-v1.0.2.zip"') && html.includes("Không cần mở CMD"), "Windows guide links to the self-contained ZIP installer"],
   [windowsInstaller.includes('/remove "%PLUGIN_NAME%"') && windowsInstaller.includes('/list all') && windowsInstaller.indexOf('/remove "%PLUGIN_NAME%"') < windowsInstaller.indexOf('/install "%CCX_FILE%"'), "Windows installer removes an existing plugin before installing the new version"],
+  [packageJson.scripts?.["package:windows"] === "node scripts/package-windows.mjs", "Package script rebuilds the Windows ZIP with Node.js"],
   [js.includes("download-trigger") && js.includes("dataset.downloadTitle") && js.includes("setTimeout(hideToast, 4500)"), "Platform-specific download feedback is wired without blocking the download"],
 ];
 const failed = checks.filter(([pass]) => !pass);

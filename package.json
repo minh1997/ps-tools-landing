@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && node scripts/check-build.mjs",
+    "package:windows": "node scripts/package-windows.mjs",
     "preview": "npm run build && wrangler dev",
     "check": "astro check && node scripts/check-site.mjs",
     "deploy": "npm run check && npm run build && wrangler deploy"
