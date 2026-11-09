@@ -1,0 +1,174 @@
+---
+import "../styles/global.css";
+
+const contactEmail = "congminh1203@gmail.com";
+const sections = [
+  ["pham-vi", "Phạm vi áp dụng"],
+  ["du-lieu", "Thông tin được xử lý"],
+  ["muc-dich", "Mục đích sử dụng"],
+  ["chia-se", "Dịch vụ bên thứ ba"],
+  ["luu-tru", "Lưu trữ và bảo vệ"],
+  ["cookie", "Cookie và lưu trữ trên thiết bị"],
+  ["quyen-cua-ban", "Lựa chọn của bạn"],
+  ["lien-he", "Liên hệ và cập nhật"],
+];
+---
+
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07111d" />
+    <meta name="description" content="Chính sách quyền riêng tư của PS Visual Tool: thông tin tài khoản, nạp credit, xử lý ảnh và cách gửi yêu cầu về dữ liệu cá nhân." />
+    <meta property="og:title" content="Chính sách quyền riêng tư — PS Visual Tool" />
+    <meta property="og:description" content="Tìm hiểu cách thông tin của bạn được xử lý khi sử dụng website và plugin PS Visual Tool." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="vi_VN" />
+    <link rel="canonical" href={new URL("/privacy-policy", Astro.site)} />
+    <title>Chính sách quyền riêng tư — PS Visual Tool</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#policy-content">Đến nội dung chính sách</a>
+    <header class="site-header">
+      <div class="container policy-nav">
+        <a class="brand" href="/" aria-label="PS Visual Tool — về trang chủ">
+          <svg class="brand-mark" viewBox="0 0 54 54" aria-hidden="true"><path d="M27 3 48 15v24L27 51 6 39V15L27 3Z" /><path d="m9 17 18 10 18-10M9 29l18 10 18-10M27 27v24" /><path d="m17 22 10-6 10 6" /></svg>
+          <span class="brand-name"><b>P &amp; S</b><i>Visual Tool</i></span>
+        </a>
+        <a class="home-link" href="/">← Trang chủ</a>
+      </div>
+    </header>
+
+    <main class="policy-main container" id="policy-content">
+      <div class="policy-intro">
+        <p class="policy-kicker">PS Visual Tool · Privacy Policy</p>
+        <h1>Chính sách quyền riêng tư</h1>
+        <p class="policy-lead">Thông tin nào được xử lý khi bạn sử dụng dịch vụ, vì sao chúng tôi cần thông tin đó và cách bạn liên hệ về dữ liệu của mình.</p>
+        <p class="policy-date">Cập nhật lần cuối: <time datetime="2026-11-09">09 tháng 11 năm 2026</time></p>
+      </div>
+
+      <div class="policy-layout">
+        <aside class="policy-index">
+          <nav aria-label="Mục lục chính sách">
+            <h2>Trong trang này</h2>
+            <ol>{sections.map(([id, label]) => <li><a href={`#${id}`}>{label}</a></li>)}</ol>
+          </nav>
+          <div class="policy-contact">
+            <strong>Cần hỗ trợ về dữ liệu?</strong>
+            <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+          </div>
+        </aside>
+
+        <article class="policy-content">
+          <section id="pham-vi" aria-labelledby="scope-title">
+            <h2 id="scope-title">1. Phạm vi áp dụng</h2>
+            <p>Chính sách này mô tả việc xử lý thông tin khi bạn truy cập website PS Visual Tool, tạo đơn mua credit hoặc sử dụng plugin PS Tools V1 trong Adobe Photoshop. Đầu mối tiếp nhận yêu cầu về quyền riêng tư của PS Visual Tool là <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p>
+            <p>Các dịch vụ độc lập như Adobe Creative Cloud, dịch vụ đăng nhập và trang thanh toán có chính sách riêng đối với thông tin được xử lý trên nền tảng của họ.</p>
+          </section>
+
+          <section id="du-lieu" aria-labelledby="data-title">
+            <h2 id="data-title">2. Thông tin được xử lý</h2>
+            <ul>
+              <li><strong>Tài khoản và phiên đăng nhập:</strong> thông tin hồ sơ do dịch vụ đăng nhập trả về, email, mã phiên đăng nhập và số dư credit để xác thực và hiển thị tài khoản trong plugin.</li>
+              <li><strong>Đơn mua credit:</strong> email bạn nhập, gói credit đã chọn, mã đơn và trạng thái giao dịch để tạo đơn, đối soát và ghi nhận credit. Biểu mẫu trên website không yêu cầu số thẻ, mã CVV hoặc mật khẩu ngân hàng.</li>
+              <li><strong>Ảnh và tác vụ chỉnh sửa:</strong> khi bạn chủ động dùng tính năng xử lý ảnh trực tuyến, plugin gửi ảnh đầu vào và thông tin tác vụ đến API của PS Visual Tool tại <span class="domain">visual-tools.webacela.com</span> để nhận kết quả. Các tác vụ có thể bao gồm mã tính năng, thông số xử lý và thông tin sử dụng credit.</li>
+              <li><strong>Thông tin kỹ thuật:</strong> địa chỉ IP, thông tin trình duyệt hoặc thiết bị, thời điểm truy cập và lỗi kết nối có thể được xử lý bởi hạ tầng cung cấp dịch vụ.</li>
+              <li><strong>Thông tin hỗ trợ:</strong> email, nội dung trao đổi và tệp bạn tự gửi khi yêu cầu hỗ trợ.</li>
+            </ul>
+            <div class="policy-note"><strong>Với ảnh của khách hàng hoặc người khác</strong><p>Hãy bảo đảm bạn có quyền sử dụng và gửi ảnh lên dịch vụ xử lý. Nếu cần biết thêm về nhà cung cấp xử lý ảnh hoặc thời hạn lưu ảnh cho một tác vụ cụ thể, hãy liên hệ chúng tôi trước khi gửi nội dung.</p></div>
+          </section>
+
+          <section id="muc-dich" aria-labelledby="purpose-title">
+            <h2 id="purpose-title">3. Mục đích sử dụng thông tin</h2>
+            <p>Thông tin được xử lý để đăng nhập và duy trì phiên sử dụng, thực hiện yêu cầu chỉnh sửa ảnh, quản lý credit, xử lý đơn hàng, hỗ trợ người dùng, chẩn đoán lỗi và bảo vệ dịch vụ khỏi lạm dụng.</p>
+            <p>Bạn có thể xem nội dung website và tải bộ cài mà không cần nhập email. Email trong biểu mẫu nạp credit được gửi khi bạn nhấn “Mua ngay” để tạo đơn.</p>
+          </section>
+
+          <section id="chia-se" aria-labelledby="sharing-title">
+            <h2 id="sharing-title">4. Dịch vụ bên thứ ba</h2>
+            <p>Để thực hiện các chức năng bạn yêu cầu, thông tin có thể được xử lý bởi những dịch vụ sau:</p>
+            <ul>
+              <li><strong>Hệ thống PS Visual Tool:</strong> API tại <span class="domain">visual-tools.webacela.com</span> tiếp nhận yêu cầu tài khoản, xử lý ảnh, sử dụng credit và tạo đơn thanh toán; dịch vụ xử lý ảnh được kết nối qua hệ thống này phục vụ tác vụ bạn chọn.</li>
+              <li><strong>Cloudflare:</strong> cung cấp hạ tầng phân phối website và kết nối API, có thể xử lý thông tin yêu cầu mạng để truyền tải và bảo vệ dịch vụ. Xem <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">chính sách quyền riêng tư của Cloudflare</a>.</li>
+              <li><strong>Google Fonts:</strong> website tải phông chữ từ Google. Khi tải font, trình duyệt kết nối đến máy chủ Google và gửi các thông tin cần thiết cho yêu cầu mạng, như IP và thông tin trình duyệt. Xem <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">chính sách quyền riêng tư của Google</a>.</li>
+              <li><strong>Adobe và nhà cung cấp thanh toán/đăng nhập:</strong> xử lý thông tin khi bạn sử dụng Creative Cloud, đăng nhập qua trình duyệt hoặc tiếp tục đến trang thanh toán. Bạn nên đọc chính sách hiển thị trên dịch vụ tương ứng.</li>
+            </ul>
+            <p>Tùy vị trí hạ tầng của từng nhà cung cấp, dữ liệu có thể được xử lý ngoài quốc gia nơi bạn đang cư trú.</p>
+          </section>
+
+          <section id="luu-tru" aria-labelledby="retention-title">
+            <h2 id="retention-title">5. Lưu trữ và bảo vệ thông tin</h2>
+            <p>Thời gian lưu trữ phụ thuộc vào loại dữ liệu và mục đích xử lý: duy trì tài khoản, hoàn thành tác vụ, đối soát đơn hàng, giải quyết hỗ trợ và đáp ứng nghĩa vụ lưu trữ áp dụng. Bạn có thể gửi yêu cầu để biết thêm về thời hạn lưu trữ hoặc đề nghị xóa thông tin liên quan đến mình.</p>
+            <p>Kết nối website và API sử dụng HTTPS. Plugin lưu mã làm mới phiên đăng nhập trong kho lưu trữ bảo mật của Adobe UXP trên thiết bị; thao tác đăng xuất xóa mã này khỏi kho lưu trữ của plugin. Việc đăng xuất hoặc gỡ plugin không đồng nghĩa với xóa dữ liệu tài khoản hay giao dịch trên máy chủ.</p>
+            <p>Không phương thức truyền hoặc lưu trữ dữ liệu nào bảo đảm an toàn tuyệt đối. Khi gửi yêu cầu hỗ trợ, vui lòng không gửi mật khẩu, mã OTP hoặc thông tin thẻ thanh toán.</p>
+          </section>
+
+          <section id="cookie" aria-labelledby="cookies-title">
+            <h2 id="cookies-title">6. Cookie và lưu trữ trên thiết bị</h2>
+            <p>Trang chủ hiện không tích hợp công cụ quảng cáo hoặc phân tích hành vi trong mã nguồn và không lưu email nạp credit vào localStorage của trình duyệt. Các dịch vụ hạ tầng, đăng nhập hoặc thanh toán có thể sử dụng cookie và công nghệ lưu trữ riêng theo chính sách của họ.</p>
+            <p>Bạn có thể quản lý cookie trong cài đặt trình duyệt. Việc chặn cookie của dịch vụ đăng nhập hoặc thanh toán có thể ảnh hưởng đến chức năng tương ứng.</p>
+          </section>
+
+          <section id="quyen-cua-ban" aria-labelledby="choices-title">
+            <h2 id="choices-title">7. Lựa chọn và yêu cầu của bạn</h2>
+            <p>Bạn có thể liên hệ để hỏi về dữ liệu đang được xử lý, yêu cầu truy cập hoặc sửa thông tin, đề nghị xóa dữ liệu hay hạn chế việc xử lý trong phạm vi áp dụng. Chúng tôi có thể cần xác minh bạn là chủ tài khoản trước khi xử lý yêu cầu.</p>
+            <p>Một số dữ liệu có thể cần được giữ lại để đối soát giao dịch, xử lý tranh chấp hoặc đáp ứng nghĩa vụ lưu trữ. Khi điều này ảnh hưởng đến yêu cầu của bạn, chúng tôi sẽ giải thích trong phản hồi.</p>
+            <p>Bạn có thể dừng gửi ảnh bằng cách không thực hiện tác vụ trực tuyến và đăng xuất khỏi plugin để kết thúc phiên sử dụng trên thiết bị.</p>
+          </section>
+
+          <section id="lien-he" aria-labelledby="contact-title">
+            <h2 id="contact-title">8. Liên hệ và cập nhật chính sách</h2>
+            <p>Để gửi câu hỏi hoặc yêu cầu về dữ liệu cá nhân, vui lòng email đến <a href={`mailto:${contactEmail}`}>{contactEmail}</a> với tiêu đề “Quyền riêng tư — PS Visual Tool”. Hãy cung cấp email tài khoản và mô tả yêu cầu; không gửi thông tin đăng nhập bí mật.</p>
+            <p>Chúng tôi sẽ cập nhật nội dung tại trang này khi cách vận hành dịch vụ thay đổi. Ngày cập nhật ở đầu trang giúp bạn nhận biết phiên bản chính sách đang áp dụng.</p>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container policy-footer"><span>© 2026 PS Visual Tool</span><a href="/">Về trang chủ ↗</a></div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .skip-link{position:absolute;top:8px;left:12px;z-index:100;padding:10px 14px;border-radius:6px;background:#d4edff;color:#07111d;transform:translateY(-160%)}
+  .skip-link:focus{transform:translateY(0)}
+  .policy-nav{height:100%;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .home-link{color:#bad9ee;font-size:.85rem}
+  .policy-main{max-width:1140px;padding-block:64px 80px}
+  .policy-intro{max-width:850px;margin-bottom:44px}
+  .policy-kicker{margin:0 0 14px;color:#78caff;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+  h1{margin:0 0 18px;font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.15;letter-spacing:-.035em}
+  .policy-lead{max-width:760px;margin:0;color:#b9cad9;line-height:1.8}
+  .policy-date{margin:20px 0 0;color:#92aabe;font-size:.8rem}
+  .policy-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;align-items:start}
+  .policy-index{position:sticky;top:96px;border:1px solid var(--line);border-radius:12px;background:#091927;padding:23px}
+  .policy-index h2{margin:0 0 15px;color:#e6f5ff;font-size:.9rem}
+  .policy-index ol{margin:0;padding-left:20px;color:#86a4b9}
+  .policy-index li{padding-block:6px;font-size:.8rem;line-height:1.6}
+  .policy-contact{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:.76rem;line-height:1.8}
+  .policy-contact strong{display:block;color:#c4d8e7}
+  .policy-contact a{color:#8cd2ff;overflow-wrap:anywhere}
+  .policy-content{min-width:0}
+  .policy-content section{padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid var(--line);scroll-margin-top:90px}
+  .policy-content section:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
+  .policy-content h2{margin:0 0 17px;color:#eef7ff;font-size:1.25rem;line-height:1.5;letter-spacing:-.02em}
+  .policy-content p,.policy-content li{color:#afc0cf;font-size:.92rem;line-height:1.9}
+  .policy-content p{margin:0 0 13px}
+  .policy-content p:last-child{margin-bottom:0}
+  .policy-content ul{margin:0 0 16px;padding-left:22px}
+  .policy-content li{padding-left:4px;margin-bottom:12px}
+  .policy-content strong{color:#deecf8;font-weight:700}
+  .policy-content a{color:#86d0ff;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+  .policy-note{margin-top:23px;padding:18px 20px;border-left:3px solid #68c5ff;border-radius:0 8px 8px 0;background:rgba(46,119,167,.12)}
+  .policy-note strong{font-size:.9rem}
+  .policy-note p{margin-top:7px;font-size:.85rem}
+  .domain{overflow-wrap:anywhere}
+  .policy-footer{display:flex;justify-content:space-between;gap:16px;padding-block:9px;color:#99afc1;font-size:.78rem}
+  a:hover{color:#fff}
+  a:focus-visible{outline:2px solid #8bd6ff;outline-offset:4px;border-radius:2px}
+  @media(max-width:850px){.policy-layout{grid-template-columns:1fr;gap:32px}.policy-index{position:static}.policy-index ol{columns:2;column-gap:35px}.policy-index li{break-inside:avoid}.policy-main{padding-top:40px}.policy-intro{margin-bottom:28px}}
+  @media(max-width:480px){.policy-index ol{columns:1}.policy-index{padding:20px}.policy-main{padding-bottom:45px}.policy-content h2{font-size:1.1rem}.policy-content p,.policy-content li{font-size:.88rem}.policy-lead{font-size:.9rem}.policy-note{padding:15px}.policy-footer{flex-wrap:wrap}.home-link{font-size:.75rem}}
+</style>

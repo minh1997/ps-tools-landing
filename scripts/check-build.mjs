@@ -2,6 +2,7 @@ import { access, readFile, stat } from "node:fs/promises";
 
 const required = [
   "dist/index.html",
+  "dist/privacy-policy/index.html",
   "dist/assets/ps-studio-hero-ui.webp",
   "dist/assets/ps-tools-guide.webp",
   "dist/downloads/PS_V1.0.2.ccx",
